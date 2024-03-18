@@ -26,10 +26,7 @@ class _HomeState extends State<HomeChat> {
 
   // Run API openAI
   Future<void> setApiKeyOnStartup() async {
-    final sp = await SharedPreferences.getInstance();
-    var key = sp.getString(spOpenApiKey);
-    if (key == null || key.isEmpty) return;
-    OpenAI.apiKey = key;
+    OpenAI.apiKey = spOpenApiKey;
   }
 
   @override
